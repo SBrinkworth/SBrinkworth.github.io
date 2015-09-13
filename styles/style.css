@@ -61,12 +61,19 @@ header > ul {
   margin: 0 auto;
   min-height: 750px;
   max-width: 1000px;
+  color: black;
+  box-sizing: border-box;
+  padding-left: 40px;
+  padding-top: 10px;
 }
 
 .footer {
-  margin-top: -16px;
+  margin-top: -21px;
   background-color: black;
-  height: 150px;
   color: white;
-  min-height: 150px;
+  min-height: 151px;
+}
+
+.home-content {
+  color: black;
 }

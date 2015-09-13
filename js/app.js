@@ -1,7 +1,6 @@
 var profileApp = angular.module('profileApp', ['ngRoute']);
 
-profileApp.config(function($routeProvider, $httpProvider) {
-  $httpProvider.interceptors.push('httpRequestInterceptor');
+profileApp.config(function($routeProvider) {
 
   $routeProvider.when('/', {
     templateUrl: 'js/home/homeTmpl.html',
@@ -10,7 +9,7 @@ profileApp.config(function($routeProvider, $httpProvider) {
     templateUrl: 'js/projects/projectsTmpl.html',
     controller: 'projectsCtrl'
   }).when('/aboutme', {
-    templateUrl: 'js/aboutMe/aboutMeTmple.html',
+    templateUrl: 'js/aboutMe/aboutMeTmpl.html',
     controller: 'aboutMeCtrl'
   }).when('/contact', {
     templateUrl: 'js/contact/contactTmpl.html',
