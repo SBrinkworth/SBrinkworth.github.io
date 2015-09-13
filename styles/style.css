@@ -112,9 +112,6 @@ header {
     margin-left: 5px;
     background-color: black;
   }
-
-  .menu-drop-down {
-  }
 }
 
 @media (max-width: 530px) {
@@ -131,5 +128,43 @@ header {
 
   .main-doc {
     width: 90%;
+  }
+}
+
+@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) {
+  .page-title {
+    display: inline-block;
+    margin: 20px;
+    font-family: 'Rockwell Extra Bold';
+    font-size: 15px;
+  }
+
+  .my-name {
+    font-size: 20px;
+  }
+
+  .main-doc {
+    width: 90%;
+  }
+
+  .menu > ul{
+    display: none;
+  }
+
+  .menu-button {
+    display: inline-block;
+    height: 30px;
+    width: 50px;
+    background-color: orange;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+
+  .menu-button > div {
+    height: 2px;
+    width: 40px;
+    margin: 6px;
+    margin-left: 5px;
+    background-color: black;
   }
 }
