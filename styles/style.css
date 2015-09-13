@@ -1,6 +1,7 @@
 /*Index.html styles*/
 body {
   background-color: gray;
+  overflow: hidden;
 }
 
 header {
