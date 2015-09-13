@@ -1,11 +1,15 @@
 /*Index.html styles*/
-html {
+html, body {
+  background-color: gray;
   overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
 
-body {
-  background-color: gray;
+body > div{
   overflow: scroll;
+  height: 100%;
+  width: 100%;
 }
 
 header {

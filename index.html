@@ -7,46 +7,48 @@
     <link rel="stylesheet" href="styles/style.css">
   </head>
   <body ng-controller="mainCtrl">
-    <header>
-      <div class="page-title">
-        <div class="my-name">
-          Stephen Brinkworth
+    <div>
+      <header>
+        <div class="page-title">
+          <div class="my-name">
+            Stephen Brinkworth
+          </div>
+          <div class="sub-text">
+            Portfolio
+          </div>
         </div>
-        <div class="sub-text">
-          Portfolio
-        </div>
-      </div>
-      <div class="menu">
-        <ul>
-          <a href="#/"><li class="page-link">Home</li></a>
-          <a href="#/projects"><li class="page-link">Projects</li></a>
-          <a href="#/aboutme"><li class="page-link">About Me</li></a>
-          <a href="#/contact"><li class="page-link" id="last-li">Contact</li></a>
-        </ul>
-        <div class="menu-button" ng-click="toggleMenu()">
-          <div class="menu-button-line"></div>
-          <div class="menu-button-line"></div>
-          <div class="menu-button-line"></div>
-        </div>
-        <div class="menu-drop-down" ng-show="showMenu">
+        <div class="menu">
           <ul>
             <a href="#/"><li class="page-link">Home</li></a>
             <a href="#/projects"><li class="page-link">Projects</li></a>
             <a href="#/aboutme"><li class="page-link">About Me</li></a>
             <a href="#/contact"><li class="page-link" id="last-li">Contact</li></a>
           </ul>
+          <div class="menu-button" ng-click="toggleMenu()">
+            <div class="menu-button-line"></div>
+            <div class="menu-button-line"></div>
+            <div class="menu-button-line"></div>
+          </div>
+          <div class="menu-drop-down" ng-show="showMenu">
+            <ul>
+              <a href="#/"><li class="page-link">Home</li></a>
+              <a href="#/projects"><li class="page-link">Projects</li></a>
+              <a href="#/aboutme"><li class="page-link">About Me</li></a>
+              <a href="#/contact"><li class="page-link" id="last-li">Contact</li></a>
+            </ul>
+          </div>
         </div>
+      </header>
+
+      <div class="header-space"></div>
+
+      <div class="main-doc">
+        <ng-view></ng-view>
       </div>
-    </header>
 
-    <div class="header-space"></div>
+      <div class="main-doc footer">
 
-    <div class="main-doc">
-      <ng-view></ng-view>
-    </div>
-
-    <div class="main-doc footer">
-
+      </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
