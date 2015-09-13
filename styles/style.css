@@ -1,7 +1,11 @@
 /*Index.html styles*/
+html {
+  overflow: hidden;
+}
+
 body {
   background-color: gray;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 header {
