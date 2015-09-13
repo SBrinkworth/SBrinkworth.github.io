@@ -143,6 +143,11 @@ header {
     margin-left: 5px;
     background-color: black;
   }
+
+  #profile-img {
+    height: 100px;
+    width: 100px;
+  }
 }
 
 @media (max-width: 530px) {
@@ -162,8 +167,8 @@ header {
   }
 
   #profile-img {
-    height: 100px;
-    width: 100px;
+    height: 50px;
+    width: 50px;
   }
 }
 
