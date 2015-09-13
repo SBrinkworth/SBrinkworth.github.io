@@ -114,6 +114,8 @@ header {
   left: 30px;
   bottom: 30px;
   border: 2px solid black;
+  height: 200px;
+  width: 200px;
 }
 
 .content {
@@ -160,8 +162,8 @@ header {
   }
 
   #profile-img {
-    height: 50px;
-    width: 50px;
+    height: 100px;
+    width: 100px;
   }
 }
 
