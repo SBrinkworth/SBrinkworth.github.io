@@ -1,2 +1,2 @@
-# SBrinkworth.github.io
-My Portfolio Website
+# noServerProject
+The noServer Project for  devMountain 

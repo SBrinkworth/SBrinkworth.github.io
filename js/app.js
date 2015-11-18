@@ -1,19 +1,45 @@
-var profileApp = angular.module('profileApp', ['ngRoute']);
+var app = angular.module('pokeApp', ['ngRoute', 'firebase']);
 
-profileApp.config(function($routeProvider) {
+app.constant('pa', {
+  url: 'http://pokeapi.co'
+});
+
+app.constant('fb', {
+  url: 'https://pokeappchat.firebaseio.com/'
+});
+
+app.config(function($routeProvider, $httpProvider) {
 
   $routeProvider.when('/', {
-    templateUrl: 'js/home/homeTmpl.html',
+    templateUrl: 'js/routes/home/homeTmpl.html',
     controller: 'homeCtrl'
-  }).when('/projects', {
-    templateUrl: 'js/projects/projectsTmpl.html',
-    controller: 'projectsCtrl'
-  }).when('/aboutme', {
-    templateUrl: 'js/aboutMe/aboutMeTmpl.html',
-    controller: 'aboutMeCtrl'
-  }).when('/contact', {
-    templateUrl: 'js/contact/contactTmpl.html',
-    controller: 'contactCtrl'
+  }).when('/pokedex', {
+    templateUrl: 'js/routes/pokedex/pokedexTmpl.html',
+    controller: 'pokedexCtrl',
+    resolve: {
+      pokedex: function(pokeService) {
+        return pokeService.getPokedexData();
+      }
+    }
+  }).when('/pokeforum', {
+    templateUrl: 'js/routes/pokeforum/pokeforumTmpl.html',
+    controller: 'pokeforumCtrl',
+    resolve: {
+      threadsRef: function(pokeForumService) {
+        return pokeForumService.getThreads();
+      }
+    }
+  }).when('/pokeforum/:threadId', {
+    templateUrl: 'js/routes/forumThread/forumThreadTmpl.html',
+    controller: 'forumThreadCtrl',
+    resolve: {
+      threadRef: function(pokeForumService, $route) {
+        return pokeForumService.getThread($route.current.params.threadId);
+      },
+      commentsRef: function(pokeForumService, $route) {
+        return pokeForumService.getComments($route.current.params.threadId);
+      }
+    }
   }).otherwise({
     redirectTo: '/'
   });

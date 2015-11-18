@@ -1,62 +1,50 @@
 <!DOCTYPE html>
-<html ng-app="profileApp">
-  <head>
-    <meta charset="utf-8">
-    <title>SB Portfolio</title>
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/style.css">
-  </head>
-  <header>
-    <div class="page-title">
-      <div class="my-name">
-        Stephen Brinkworth
+<html ng-app="pokeApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>SB Pok&eacute;dex</title>
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body ng-controller="mainCtrl">
+
+  <div class="header">
+    <a href="#/">
+      <div class="logo logoText">
+        <img src="http://cdn.bulbagarden.net/upload/1/1b/Pokedex_logo.png" />
       </div>
-      <div class="sub-text">
-        Portfolio
-      </div>
+    </a>
+    <div class="logo pokeball">
+      <img src="http://img03.deviantart.net/49cf/i/2011/068/a/c/pokeball_desktop_icon_by_beccerberry-d3b98cf.png" />
     </div>
-    <div class="menu">
-      <ul>
-        <a href="#/"><li class="page-link">Home</li></a>
-        <a href="#/projects"><li class="page-link">Projects</li></a>
-        <a href="#/aboutme"><li class="page-link">About Me</li></a>
-        <a href="#/contact"><li class="page-link" id="last-li">Contact</li></a>
-      </ul>
-      <div class="menu-button" ng-click="toggleMenu()">
-        <div class="menu-button-line"></div>
-        <div class="menu-button-line"></div>
-        <div class="menu-button-line"></div>
-      </div>
-      <div class="menu-drop-down" ng-show="showMenu">
-        <ul>
-          <a href="#/"><li class="page-link">Home</li></a>
-          <a href="#/projects"><li class="page-link">Projects</li></a>
-          <a href="#/aboutme"><li class="page-link">About Me</li></a>
-          <a href="#/contact"><li class="page-link" id="last-li">Contact</li></a>
-        </ul>
-      </div>
+  </div>
+
+  <div ng-view></div>
+
+  <div class="runningPokemon">
+    <div class="running" id="pikachu">
+      <img src="http://38.media.tumblr.com/fe61dc2b7ef08a538b906eced7fa5cb5/tumblr_mmpic5R7931rkbi87o1_500.gif" />
     </div>
-  </header>
-  <body ng-controller="mainCtrl">
-    <div>
-      <div class="header-space"></div>
+  </div>
 
-      <div class="main-doc">
-        <ng-view></ng-view>
-      </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.js"></script>∫
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="js/jQuery.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers/mainCtrl.js"></script>
+  <script src="js/services/pokeService.js"></script>
+  <script src="js/services/pokeForumService.js"></script>
+  <script src="js/routes/home/homeCtrl.js"></script>
+  <script src="js/routes/pokedex/pokedexCtrl.js"></script>
+  <script src="js/routes/pokeforum/pokeforumCtrl.js"></script>
+  <script src="js/routes/forumThread/forumThreadCtrl.js"></script>
+  <script src="js/directives/pokemon/pokemonDir.js"></script>
+  <script src="js/directives/pokedex/pokedexDir.js"></script>
+</body>
 
-      <div class="main-doc footer">
-
-      </div>
-    </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/mainCtrl.js"></script>
-    <script src="js/home/homeCtrl.js"></script>
-    <script src="js/aboutMe/aboutMeCtrl.js"></script>
-    <script src="js/projects/projectsCtrl.js"></script>
-    <script src="js/contact/contactCtrl.js"></script>
-  </body>
 </html>
