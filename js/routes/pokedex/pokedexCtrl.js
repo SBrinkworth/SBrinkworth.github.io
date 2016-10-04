@@ -11,9 +11,10 @@ angular.module('pokeApp').controller('pokedexCtrl', function($scope, pokeService
         $scope.pokemonDescription = response;
       });
     });
-    pokeService.getSpriteData(id + 1).then(function(response) {
-      $scope.pokemonSpriteUrl = response;
-      $scope.pokemonSprite = pa.url + $scope.pokemonSpriteUrl.image;
-    });
+    $scope.pokemonSprite = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + id  + ".png";
+//     pokeService.getSpriteData(id + 1).then(function(response) {
+//       $scope.pokemonSpriteUrl = response;
+//       $scope.pokemonSprite = pa.url + $scope.pokemonSpriteUrl.image;
+//     });
   };
 });
